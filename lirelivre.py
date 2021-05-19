@@ -28,125 +28,80 @@ data_dict[0]['texte'] = "bla bla bla bla bla bla bla bla bla bla bla bla bla bla
 
 
 
+n = 0
 
+def numchapchoix1():
+    n = data_dict["numchoix1"]
+    return n
 
 chap = tk.Tk()
 
 chap.title('Saisi chapitre')
 
-# libellé 1 : Numéro de chapitre
-
-libnum = Label(chap, text='numéro du chapitre : ')
-
-libnum.grid(row=0, column=0, sticky=E, padx=10, pady=10)
 
 # zone de saisie 1 : Numéro de chapitre
 
-entnum = Label(chap, text= data_dict[0]["numero"])
+libnum = Label(chap, text = "Chapitre :                      ")
+libnum.grid(row=0, column=1, padx=(0, 15), pady=10)
+
+entnum = Label(chap, text= data_dict[n]["numero"])
 entnum.focus_set()  # boîte de saisie par défaut
 entnum.grid(row=0, column=1, padx=(0, 15), pady=10)
 
-# libellé 2 : Nom de chapitre
 
-libnom = Label(chap, text='nom du chapitre : ')
-
-libnom.grid(row=1, column=0, sticky=E, padx=10, pady=10)
 
 # zone de saisie 2 : Nom de chapitre
 
-entnom = Label(chap, text= data_dict[0]["nom"])
+entnom = Label(chap, text= data_dict[n]["nom"])
 
 entnom.focus_set()  # boîte de saisie par défaut
 
 entnom.grid(row=1, column=1, padx=(0, 15), pady=10)
 
-# libellé 3 : Texte du chapitre
 
-libtexte = Label(chap, text='texte du chapitre : ')
-
-libtexte.grid(row=2, column=0, sticky=E, padx=10, pady=10)
 
 # zone de saisie 3 : Texte du chapitre
 
-enttexte = Label(chap, text= data_dict[0]["texte"])
+enttexte = Label(chap, text= data_dict[n]["texte"])
 
 enttexte.focus_set()  # boîte de saisie par défaut
 
 enttexte.grid(row=2, column=1, padx=(0, 15), pady=10)
 
-# libellé 4 : Texte choix 1
-
-libchoix1 = Label(chap, text='premier choix : ')
-
-libchoix1.grid(row=3, column=0, sticky=E, padx=10, pady=10)
 
 # zone de saisie 4 : Texte choix 1
 
-entchoix1 = Label(chap, text= data_dict[0]["choix1"])
+btn_choix1 = Button(chap, text= data_dict[n]["choix1"], command = numchapchoix1)
 
-entchoix1.focus_set()  # boîte de saisie par défaut
+btn_choix1.focus_set()  # boîte de saisie par défaut
 
-entchoix1.grid(row=3, column=1, padx=(0, 15), pady=10)
-
-# libellé 5 : Revoie choix 1
+btn_choix1.grid(row=3, column=1, padx=(0, 15), pady=10)
 
 
-entnumchoix1 = Label(chap, text= data_dict[0]["numchoix1"])
 
-
-entnumchoix1.focus_set()  # boîte de saisie par défaut
-
-entnumchoix1.grid(row=4, column=1, padx=(0, 15), pady=10)
-
-# libellé 6: Texte choix 2
-
-libchoix2 = Label(chap, text='deuxieme choix')
-
-libchoix2.grid(row=5, column=0, sticky=E, padx=10, pady=10)
 
 # zone de saisie 6: Texte choix 2
 
-entchoix2 = Label(chap, text= data_dict[0]["choix2"])
+btn_choix2 = Button(chap, text= data_dict[n]["choix2"])
 
 
-entchoix2.focus_set()  # boîte de saisie par défaut
+btn_choix2.focus_set()  # boîte de saisie par défaut
 
-entchoix2.grid(row=5, column=1, padx=(0, 15), pady=10)
-
-
-
-entnumchoix2 = Label(chap, text= data_dict[0]["numchoix2"])
+btn_choix2.grid(row=5, column=1, padx=(0, 15), pady=10)
 
 
-entnumchoix2.focus_set()  # boîte de saisie par défaut
 
-entnumchoix2.grid(row=6, column=1, padx=(0, 15), pady=10)
-
-# libellé 8 : Texte choix 3
-
-libchoix3 = Label(chap, text='troisieme choix : ')
-
-libchoix3.grid(row=7, column=0, sticky=E, padx=10, pady=10)
 
 # zone de saisie 8: Texte choix 3
 
-entchoix3 = Label(chap, text= data_dict[0]["choix3"])
+btn_choix3 = Button(chap, text= data_dict[n]["choix3"])
 
-entchoix3.focus_set()  # boîte de saisie par défaut
+btn_choix3.focus_set()  # boîte de saisie par défaut
 
-entchoix3.grid(row=7, column=1, padx=(0, 15), pady=10)
+btn_choix3.grid(row=7, column=1, padx=(0, 15), pady=10)
 
 # libellé 9 : Revoie choix 3
 
-
-entnumchoix3 = Label(chap, text= data_dict[0]["numchoix3"])
-
-
-entnumchoix3.focus_set()  # boîte de saisie par défaut
-
-entnumchoix3.grid(row=8, column=1, padx=(0, 15), pady=10)
-
-# Le nouveau dictionnaire est "retourné" au code appelant cette fonction
 
 
 
