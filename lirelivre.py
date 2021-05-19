@@ -17,9 +17,9 @@ def trouver_contenu_chapitre(numero_chapitre):
     raise Exception(f"Chapitre {numero_chapitre} non trouvé")
 
 
-def afficher_chapitre_gui(contenu):
-    chap = tk.Tk()
-    chap.title('Lecture du livre')
+def afficher_chapitre_gui(contenu,chap):
+
+
 
     lib_numero_chapitre = Label(chap, text = "Chapitre :                      ")
     lib_numero_chapitre.grid(row=0, column=1, padx=(0, 15), pady=10)
@@ -59,7 +59,11 @@ def affiche_chapitre(numero_chapitre):
     else:
         contenu_chapitre = trouver_contenu_chapitre(numero_chapitre)
     print(f"CHAPITRE : {contenu_chapitre}")
-    afficher_chapitre_gui(contenu_chapitre)
+    afficher_chapitre_gui(contenu_chapitre,chap)
+
+chap = tk.Tk()
+chap.title('lecture du livre')
+
 
 affiche_chapitre(None)
 
