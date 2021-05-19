@@ -1,5 +1,3 @@
-
-
 from tkinter import scrolledtext
 import tkinter as tk
 from tkinter import *
@@ -204,11 +202,8 @@ libnumchoix3 = Label(chap, text='Entrer le numéro du chapitre vers lequel le ch
 libnumchoix3.grid(row=8, column=0, sticky=E, padx=10, pady=10)
 
 # zone de saisie 9 : Revoie choix 3
-
 entnumchoix3 = Entry(chap, width=43)
-
 entnumchoix3.focus_set()  # boîte de saisie par défaut
-
 entnumchoix3.grid(row=8, column=1, padx=(0, 15), pady=10)
 
 # Le nouveau dictionnaire est "retourné" au code appelant cette fonction
