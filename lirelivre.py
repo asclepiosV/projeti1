@@ -19,7 +19,11 @@ def trouver_contenu_chapitre(numero_chapitre):
 
 def afficher_chapitre_gui(contenu,chap):
 
+    nde = " "
+    ligne = 40
 
+    for c in chap.winfo_children():
+        c.destroy()
 
     lib_numero_chapitre = Label(chap, text = "Chapitre :                      ")
     lib_numero_chapitre.grid(row=0, column=1, padx=(0, 15), pady=10)
@@ -32,7 +36,15 @@ def afficher_chapitre_gui(contenu,chap):
     nom_chapitre.focus_set()
     nom_chapitre.grid(row=1, column=1, padx=(0, 15), pady=10)
 
-    texte_chapitre = Label(chap, text= contenu["texte"])
+    ligne_chapitre = contenu["texte"]
+
+    while len(ligne_chapitre) > ligne:
+        ere = ligne_chapitre[:ligne]
+        ligne_chapitre = ligne_chapitre[ligne:]
+        nde += ere + "\n"
+    ligne_chapitre = nde + ligne_chapitre
+
+    texte_chapitre = Label(chap, text= ligne_chapitre)
     texte_chapitre.focus_set()
     texte_chapitre.grid(row=2, column=1, padx=(0, 15), pady=10)
 
