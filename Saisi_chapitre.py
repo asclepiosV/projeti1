@@ -77,7 +77,7 @@ libnum = Label(chap, text='Entrer le numéro du chapitre : ')
 libnum.grid(row=0, column=0, sticky=E, padx=10, pady=10)
 
 entnum = Entry(chap, width=43)
-entnum.focus_set()  # boîte de saisie par défaut
+entnum.focus_set()
 entnum.grid(row=0, column=1, padx=(0, 15), pady=10)
 
 libnom = Label(chap, text='Entrer le nom du chapitre : ')
