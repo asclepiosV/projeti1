@@ -19,17 +19,15 @@ def trouver_contenu_chapitre(numero_chapitre):
 
 def afficher_chapitre_gui(contenu,chap):
 
-    nde = " "
-    ligne = 40
+
 
     for c in chap.winfo_children():
         c.destroy()
 
-    lib_numero_chapitre = Label(chap, text = "Chapitre :                      ")
-    lib_numero_chapitre.grid(row=0, column=1, padx=(0, 15), pady=10)
-    lib_numero_chapitre.configure(font=("Impact", 20, ), background="#FFFAF0")
 
-    num_chapitre = Label(chap, text= contenu["numero"])
+    txnumchap = "Chapitre : " +  contenu["numero"]
+
+    num_chapitre = Label(chap, text= txnumchap)
     num_chapitre.focus_set()
     num_chapitre.grid(row=0, column=1, padx=(0, 15), pady=10)
     num_chapitre.configure(font=("Impact", 20, ), background="#FFFAF0")
@@ -41,7 +39,7 @@ def afficher_chapitre_gui(contenu,chap):
 
     ligne_chapitre = contenu["texte"]
 
-    ligne = 150
+    ligne = 110
     position_espace = 0
     position_courante = 0
     position_debut = 0
@@ -63,17 +61,71 @@ def afficher_chapitre_gui(contenu,chap):
     texte_chapitre.grid(row=2, column=1, padx=(0, 15), pady=10)
     texte_chapitre.configure(font=("@Kozuka Mincho Pr6N B", 12), background="#FFFAF0" )
 
-    btn_choix1 = Button(chap, text= contenu["choix1"], command=lambda: affiche_chapitre(contenu["numchoix1"]))
+    ligne_choix1 = contenu["choix1"]
+    ligne1 = 80
+    position_espace1 = 0
+    position_courante1 = 0
+    position_debut1 = 0
+    ligne_resultat1 = ""
+
+    for i in range(0, len(ligne_choix1)):
+        if ligne_choix1[i] == " ":
+            position_espace1 = i
+        if position_courante1 == ligne1:
+            ligne_resultat1 += ligne_choix1[position_debut1: position_espace1] + "\n"
+            position_debut1 = position_espace1 + 1
+            position_courante1 = 0
+        position_courante1 += 1
+    ligne_resultat1 += ligne_choix1[position_debut1:]
+    ligne_choix1 = ligne_resultat1
+
+    btn_choix1 = Button(chap, text= ligne_choix1, command=lambda: affiche_chapitre(contenu["numchoix1"]))
     btn_choix1.focus_set()
     btn_choix1.grid(row=3, column=1, padx=(0, 15), pady=10)
     btn_choix1.configure(font=("@Kozuka Mincho Pr6N B", 8,"italic"), background="#fcf1de")
 
-    btn_choix2 = Button(chap, text= contenu["choix2"], command=lambda: affiche_chapitre(contenu["numchoix2"]))
+    ligne_choix2 = contenu["choix2"]
+    ligne2 = 80
+    position_espace2 = 0
+    position_courante2 = 0
+    position_debut2 = 0
+    ligne_resultat2 = ""
+
+    for i in range(0, len(ligne_choix2)):
+        if ligne_choix2[i] == " ":
+            position_espace2 = i
+        if position_courante2 == ligne2:
+            ligne_resultat2 += ligne_choix2[position_debut2: position_espace2] + "\n"
+            position_debut2 = position_espace2 + 1
+            position_courante2 = 0
+        position_courante2 += 1
+    ligne_resultat2 += ligne_choix2[position_debut2:]
+    ligne_choix2 = ligne_resultat2
+
+    btn_choix2 = Button(chap, text= ligne_choix2, command=lambda: affiche_chapitre(contenu["numchoix2"]))
     btn_choix2.focus_set()
     btn_choix2.grid(row=5, column=1, padx=(0, 15), pady=10)
     btn_choix2.configure(font=("@Kozuka Mincho Pr6N B", 8, "italic"), background="#fcf1de")
 
-    btn_choix3 = Button(chap, text= contenu["choix3"], command=lambda: affiche_chapitre(contenu["numchoix3"]))
+    ligne_choix3 = contenu["choix3"]
+    ligne3 = 80
+    position_espace3 = 0
+    position_courante3 = 0
+    position_debut3 = 0
+    ligne_resultat3 = ""
+
+    for i in range(0, len(ligne_choix3)):
+        if ligne_choix3[i] == " ":
+            position_espace3 = i
+        if position_courante3 == ligne3:
+            ligne_resultat3 += ligne_choix3[position_debut3: position_espace3] + "\n"
+            position_debut3 = position_espace3 + 1
+            position_courante3 = 0
+        position_courante3 += 1
+    ligne_resultat3 += ligne_choix3[position_debut3:]
+    ligne_choix3 = ligne_resultat3
+
+    btn_choix3 = Button(chap, text= ligne_choix3, command=lambda: affiche_chapitre(contenu["numchoix3"]))
     btn_choix3.focus_set()
     btn_choix3.grid(row=7, column=1, padx=(0, 15), pady=10)
     btn_choix3.configure(font=("@Kozuka Mincho Pr6N B", 8, "italic"), background="#fcf1de")
