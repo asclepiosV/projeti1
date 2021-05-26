@@ -56,7 +56,7 @@ def afficher_chapitre_gui(contenu,chap):
     ligne_resultat += ligne_chapitre[position_debut:]
     ligne_chapitre = ligne_resultat
 
-    texte_chapitre = Label(chap, text= ligne_chapitre)
+    texte_chapitre = Label(chap, text=ligne_chapitre)
     texte_chapitre.focus_set()
     texte_chapitre.grid(row=2, column=1, padx=(0, 15), pady=10)
     texte_chapitre.configure(font=("@Kozuka Mincho Pr6N B", 12), background="#FFFAF0" )
