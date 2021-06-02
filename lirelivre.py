@@ -9,7 +9,6 @@ with open('livre.json', 'r') as json_data:
     data_dict = json.load(json_data)
     json.dumps(data_dict, indent=4)
 
-
 def trouver_contenu_chapitre(numero_chapitre):
     for chapitre in data_dict:
         if chapitre["numero"] == numero_chapitre:
@@ -19,11 +18,8 @@ def trouver_contenu_chapitre(numero_chapitre):
 
 def afficher_chapitre_gui(contenu,chap):
 
-
-
     for c in chap.winfo_children():
         c.destroy()
-
 
     txnumchap = "Chapitre : " +  contenu["numero"]
 
@@ -148,8 +144,6 @@ chap = tk.Tk()
 chap.title('lecture du livre')
 chap.configure(bg="#FFFAF0")
 
-
 affiche_chapitre(None)
-
 
 sys.exit(0)
